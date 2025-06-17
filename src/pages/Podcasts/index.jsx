@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import "./customAudioPlayer.css";
+import { Mic } from "lucide-react";
 
 import episodio1 from "./Files/1.mp3";
 import episodio2 from "./Files/2.mp3";
@@ -63,34 +64,45 @@ const Podcasts = () => {
     <div className={styles.pageContainer}>
       <h2 className="page-title">Podcasts</h2>
 
-      <p className="description">
-        Nossa série de podcasts explora como a Inteligência Artificial está
-        revolucionando os sistemas integrados de gestão empresarial.
-      </p>
+      <div className="page-content" style={{ marginBottom: "50px" }}>
+        <div className="page-header">
+          <Mic className="page-header-icon icon-purple" />
+          <h3 className="page-header-title">Conteúdos em Áudio sobre IA</h3>
+        </div>
 
-      <ul className="episode-list">
-        {episodes.map((ep, index) => (
-          <li
-            key={index}
-            className={`episode-item ${
-              index === currentEpisodeIndex ? "active" : ""
-            }`}
-            onClick={() => setCurrentEpisodeIndex(index)}
-          >
-            <strong>{ep.title}</strong>
-            <span className="duration">{ep.duration}</span>
-          </li>
-        ))}
-      </ul>
-      <AudioPlayer
-        className="custom-player"
-        src={episodes[currentEpisodeIndex].src}
-        showJumpControls={false}
-        showSkipControls={true}
-        onClickPrevious={handlePrev}
-        onClickNext={handleNext}
-        autoPlayAfterSrcChange={true}
-      />
+        <div className="responsible-section podcasts-responsible">
+          <p className="responsible-title">Responsáveis:</p>
+          <p className="responsible-names">Jussara, Matheus, Gianne, Arthur</p>
+        </div>
+        <p className="description">
+          Nossa série de podcasts explora como a Inteligência Artificial está
+          revolucionando os sistemas integrados de gestão empresarial.
+        </p>
+
+        <ul className="episode-list">
+          {episodes.map((ep, index) => (
+            <li
+              key={index}
+              className={`episode-item ${
+                index === currentEpisodeIndex ? "active" : ""
+              }`}
+              onClick={() => setCurrentEpisodeIndex(index)}
+            >
+              <strong>{ep.title}</strong>
+              <span className="duration">{ep.duration}</span>
+            </li>
+          ))}
+        </ul>
+        <AudioPlayer
+          className="custom-player"
+          src={episodes[currentEpisodeIndex].src}
+          showJumpControls={false}
+          showSkipControls={true}
+          onClickPrevious={handlePrev}
+          onClickNext={handleNext}
+          autoPlayAfterSrcChange={true}
+        />
+      </div>
     </div>
   );
 };
