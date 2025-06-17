@@ -6,6 +6,7 @@ import Ementa from "./pages/Ementa";
 import Apresentacoes from "./pages/Apresentacoes";
 import Podcasts from "./pages/Podcasts";
 import Cases from "./pages/Cases";
+import Cases1 from "./pages/Cases/1";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/apresentacoes" element={<Apresentacoes />} />
           <Route path="/podcasts" element={<Podcasts />} />
           <Route path="/cases" element={<Cases />} />
+          <Route path="/cases/ia-na-tuper" element={<Cases1 />} />
         </Routes>
       </Layout>
     </Router>

@@ -1,9 +1,9 @@
-import React from "react";
+import styles from "./styles.module.css";
 import { Mic } from "lucide-react";
 
 const Podcasts = () => {
   return (
-    <div className="page-container">
+    <div className={styles.pageContainer}>
       <h2 className="page-title">Podcasts</h2>
 
       <div className="page-content">

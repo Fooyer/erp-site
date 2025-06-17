@@ -24,6 +24,9 @@ const Apresentacoes = () => {
             Apresentações sobre Enterprise Resource Planning integrado com
             Inteligência Artificial e outros conteúdos relevantes.
           </p>
+          <p style={{ color: "rgb(55, 65, 81)" }}>
+            Clique no item da lista abaixo para baixá-lo.
+          </p>
         </div>
 
         <div className="topics-card">
