@@ -1,7 +1,10 @@
 import React from "react";
 import { FileText, Presentation, Mic, Trophy } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="home-container">
       <div className="hero">
@@ -13,7 +16,7 @@ const Home = () => {
       </div>
 
       <div className="cards-grid">
-        <div className="card">
+        <div className="card" onClick={() => navigate("/ementa")}>
           <FileText className="card-icon icon-blue" />
           <h3 className="card-title">Ementa</h3>
           <p className="card-description">
@@ -21,19 +24,19 @@ const Home = () => {
           </p>
         </div>
 
-        <div className="card">
+        <div className="card" onClick={() => navigate("/apresentacoes")}>
           <Presentation className="card-icon icon-green" />
           <h3 className="card-title">Apresentações</h3>
           <p className="card-description">Conteúdos sobre ERP e IA</p>
         </div>
 
-        <div className="card">
+        <div className="card" onClick={() => navigate("/podcasts")}>
           <Mic className="card-icon icon-purple" />
           <h3 className="card-title">Podcasts</h3>
           <p className="card-description">Conteúdos em áudio sobre IA</p>
         </div>
 
-        <div className="card">
+        <div className="card" onClick={() => navigate("/cases")}>
           <Trophy className="card-icon icon-orange" />
           <h3 className="card-title">Cases</h3>
           <p className="card-description">Histórias de sucesso</p>
