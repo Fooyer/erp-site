@@ -446,6 +446,7 @@ html,
 body {
   height: 100%;
   margin: 0;
+  font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .mainContainer {
