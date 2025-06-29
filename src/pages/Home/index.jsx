@@ -42,6 +42,12 @@ const Home = () => {
           <p className="card-description">Histórias de sucesso</p>
         </div>
       </div>
+      <div className="developers-section">
+        <h2 className="developers-title">Desenvolvedores do Site</h2>
+        <p className="developers-names">
+          Thamires · Freddy · Carlos · Renato · Fernando
+        </p>
+      </div>
     </div>
   );
 };
