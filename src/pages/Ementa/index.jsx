@@ -1,5 +1,5 @@
-import React from "react";
-import { FileText } from "lucide-react";
+import React from "react"
+import { FileText } from "lucide-react"
 
 const Ementa = () => {
   return (
@@ -26,14 +26,18 @@ const Ementa = () => {
         </div>
 
         <div className="button-container">
-          <button className="button">
-            <FileText style={{ width: "1.25rem", height: "1.25rem" }} />
-            Baixar PDF da Ementa
-          </button>
+          <a href="/Ementa SIG 2025.pdf" download className="topic-link">
+            {" "}
+            <button className="button">
+              {" "}
+              <FileText style={{ width: "1.25rem", height: "1.25rem" }} />
+              Baixar PDF da Ementa
+            </button>
+          </a>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Ementa;
+export default Ementa
