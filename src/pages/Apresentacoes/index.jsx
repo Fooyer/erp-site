@@ -20,7 +20,7 @@ const Apresentacoes = () => {
           </div>
 
           <p style={{ color: "rgb(55, 65, 81)" }}>
-            Apresentações sobre ERP integrado com Inteligência Artificial e
+            Apresentações sobre ERP na transformação digital e indutria 4.0 e
             outros conteúdos relevantes.
           </p>
           <p style={{ color: "rgb(55, 65, 81)" }}>
