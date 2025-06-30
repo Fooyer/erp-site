@@ -1,5 +1,5 @@
-import React from "react"
-import { FileText } from "lucide-react"
+import React from "react";
+import { FileText } from "lucide-react";
 
 const Ementa = () => {
   return (
@@ -19,9 +19,8 @@ const Ementa = () => {
 
         <div className="description">
           <p>
-            Aqui você encontrará toda a documentação da disciplina de Sistemas
-            Integrados de Gestão, incluindo objetivos, metodologia, cronograma e
-            recursos necessários.
+            Aqui você encontrará toda a ementa da disciplina de Sistemas
+            Integrados de Gestão.
           </p>
         </div>
 
@@ -37,7 +36,7 @@ const Ementa = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Ementa
+export default Ementa;

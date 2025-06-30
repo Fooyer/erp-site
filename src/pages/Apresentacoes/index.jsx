@@ -20,8 +20,8 @@ const Apresentacoes = () => {
           </div>
 
           <p style={{ color: "rgb(55, 65, 81)" }}>
-            Apresentações sobre Enterprise Resource Planning integrado com
-            Inteligência Artificial e outros conteúdos relevantes.
+            Apresentações sobre ERP integrado com Inteligência Artificial e
+            outros conteúdos relevantes.
           </p>
           <p style={{ color: "rgb(55, 65, 81)" }}>
             Clique no item da lista abaixo para baixá-lo.
