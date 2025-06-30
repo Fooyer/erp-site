@@ -68,6 +68,32 @@ const Cases = () => {
               financeira e de compras
             </p>
           </div>
+          <div className="case-card">
+            <div className="case-icon-container">
+              <Trophy className="case-icon" />
+            </div>
+            <h4 className="case-title">NuBank</h4>
+            <p className="case-description">
+              O Nubank é um exemplo inspirador de empreendedorismo inovador no
+              Brasil. Fundado em 2013 por David Vélez, Cristina Junqueira e
+              Edward Wible, a fintech nasceu para enfrentar os bancos
+              tradicionais, conhecidos por suas altas tarifas, burocracia e
+              atendimento ineficiente. A proposta era clara: oferecer um serviço
+              financeiro simples, digital e centrado no cliente. Começando com
+              um cartão de crédito sem anuidade e controlado por um aplicativo,
+              o Nubank atraiu milhões de brasileiros que buscavam liberdade e
+              transparência. Com o tempo, expandiu seus serviços para conta
+              digital, empréstimos, seguros e investimentos, tudo de forma
+              prática e sem agências físicas. Seu crescimento foi impulsionado
+              por um atendimento próximo, tecnologia de ponta e forte presença
+              nas redes sociais. Hoje, o Nubank atende mais de 90 milhões de
+              pessoas e se tornou uma das maiores fintechs do mundo, com
+              presença em vários países e valor de mercado bilionário. Sua
+              história mostra que resolver um problema real com simplicidade,
+              inovação e foco nas pessoas é o caminho para o sucesso no
+              empreendedorismo moderno.
+            </p>
+          </div>
         </div>
       </div>
     </div>
