@@ -15,7 +15,7 @@ const Apresentacoes = () => {
           <div className="responsible-section apresentacoes-responsible">
             <p className="responsible-title">Responsáveis:</p>
             <p className="responsible-names">
-              Jonatan, Diogo, Gustavo, Rodrigo
+              Jonatan, Diogo, Gustavo, Rodrigo, Erik
             </p>
           </div>
 
