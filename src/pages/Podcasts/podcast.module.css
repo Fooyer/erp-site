@@ -1,0 +1,214 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+/* Page Styles */
+.pageContainer {
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.pageTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(31, 41, 55);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.pageContent {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+}
+
+.pageHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.pageHeaderIcon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.75rem;
+}
+
+.pageHeaderTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: rgb(31, 41, 55);
+}
+
+.responsibleSection {
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid rgb(168, 85, 247);
+}
+
+.responsibleTitle {
+  color: rgb(55, 65, 81);
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.responsibleNames {
+  color: rgb(75, 85, 99);
+}
+
+.description {
+  background-color: rgb(249, 250, 251);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: rgb(55, 65, 81);
+  margin-bottom: 1.5rem;
+}
+
+/* Podcast specific styles */
+.episodeList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  background: linear-gradient(
+    to right,
+    rgb(250, 245, 255) 0%,
+    rgb(253, 244, 255) 100%
+  );
+  border-radius: 0.5rem;
+  border: 1px solid rgb(196, 181, 253);
+  overflow: hidden;
+}
+
+.episodeItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(196, 181, 253, 0.3);
+}
+
+.episodeItem:last-child {
+  border-bottom: none;
+}
+
+.episodeItem:hover {
+  background-color: rgba(168, 85, 247, 0.1);
+}
+
+.episodeItem.active {
+  background-color: rgb(168, 85, 247);
+  color: white;
+}
+
+.episodeItem.active .duration {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.duration {
+  font-size: 0.875rem;
+  color: rgb(107, 114, 128);
+  font-weight: 500;
+}
+
+/* Color variants for icons */
+.iconPurple {
+  color: rgb(168, 85, 247);
+}
+
+/* Custom audio player styles */
+:global(.custom-player) {
+  background-color: rgb(31, 41, 55) !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+}
+
+:global(.custom-player .rhap_container) {
+  background-color: transparent !important;
+}
+
+:global(.custom-player .rhap_main-controls-button) {
+  color: white !important;
+}
+
+:global(.custom-player .rhap_main-controls-button:hover) {
+  color: rgb(168, 85, 247) !important;
+}
+
+:global(.custom-player .rhap_progress-filled) {
+  background-color: rgb(168, 85, 247) !important;
+}
+
+:global(.custom-player .rhap_progress-indicator) {
+  background-color: rgb(168, 85, 247) !important;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.5) !important;
+}
+
+:global(.custom-player .rhap_time) {
+  color: rgb(209, 213, 219) !important;
+}
+
+:global(.custom-player .rhap_volume-bar-area) {
+  background-color: rgba(75, 85, 99, 0.5) !important;
+}
+
+:global(.custom-player .rhap_volume-filled) {
+  background-color: rgb(168, 85, 247) !important;
+}
+
+:global(.custom-player .rhap_volume-indicator) {
+  background-color: rgb(168, 85, 247) !important;
+}
+
+/* RESPONSIVE STYLES - MOBILE */
+@media (max-width: 768px) {
+  .pageContent {
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+  }
+
+  .pageTitle {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .pageHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .pageHeaderIcon {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .responsibleSection {
+    padding-left: 0.5rem;
+  }
+
+  .episodeItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .duration {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .pageContent {
+    padding: 1rem;
+  }
+
+  .episodeItem {
+    padding: 0.75rem;
+  }
+}

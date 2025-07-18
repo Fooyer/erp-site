@@ -1,50 +1,51 @@
-import React from "react";
 import { FileText, Presentation, Mic, Trophy } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import styles from "./home.module.css";
 
 const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="home-container">
-      <div className="hero">
-        <h1 className="hero-title">Base de Conhecimento</h1>
-        <h2 className="hero-subtitle">Sistemas Integrados de Gestão</h2>
-        <p className="hero-description">
+    <div className={styles.homeContainer}>
+      <div className={styles.hero}>
+        <h1 className={styles.heroTitle}>Base de Conhecimento</h1>
+        <h2 className={styles.heroSubtitle}>Sistemas Integrados de Gestão</h2>
+        <p className={styles.heroDescription}>
           Site desenvolvido para centralizar todo o conhecimento da disciplina
         </p>
       </div>
 
-      <div className="cards-grid">
-        <div className="card" onClick={() => navigate("/ementa")}>
-          <FileText className="card-icon icon-blue" />
-          <h3 className="card-title">Ementa</h3>
-          <p className="card-description">
+      <div className={styles.cardsGrid}>
+        <div className={styles.card} onClick={() => navigate("/ementa")}>
+          <FileText className={`${styles.cardIcon} ${styles.iconBlue}`} />
+          <h3 className={styles.cardTitle}>Ementa</h3>
+          <p className={styles.cardDescription}>
             Documentação completa da disciplina
           </p>
         </div>
 
-        <div className="card" onClick={() => navigate("/apresentacoes")}>
-          <Presentation className="card-icon icon-green" />
-          <h3 className="card-title">Apresentações</h3>
-          <p className="card-description">Conteúdos sobre ERP e IA</p>
+        <div className={styles.card} onClick={() => navigate("/apresentacoes")}>
+          <Presentation className={`${styles.cardIcon} ${styles.iconGreen}`} />
+          <h3 className={styles.cardTitle}>Apresentações</h3>
+          <p className={styles.cardDescription}>Conteúdos sobre ERP e IA</p>
         </div>
 
-        <div className="card" onClick={() => navigate("/podcasts")}>
-          <Mic className="card-icon icon-purple" />
-          <h3 className="card-title">Podcasts</h3>
-          <p className="card-description">Conteúdos em áudio sobre IA</p>
+        <div className={styles.card} onClick={() => navigate("/podcasts")}>
+          <Mic className={`${styles.cardIcon} ${styles.iconPurple}`} />
+          <h3 className={styles.cardTitle}>Podcasts</h3>
+          <p className={styles.cardDescription}>Conteúdos em áudio sobre IA</p>
         </div>
 
-        <div className="card" onClick={() => navigate("/cases")}>
-          <Trophy className="card-icon icon-orange" />
-          <h3 className="card-title">Cases</h3>
-          <p className="card-description">Histórias de sucesso</p>
+        <div className={styles.card} onClick={() => navigate("/cases")}>
+          <Trophy className={`${styles.cardIcon} ${styles.iconOrange}`} />
+          <h3 className={styles.cardTitle}>Cases</h3>
+          <p className={styles.cardDescription}>Histórias de sucesso</p>
         </div>
       </div>
-      <div className="developers-section">
-        <h2 className="developers-title">Desenvolvedores do Site</h2>
-        <p className="developers-names">
+
+      <div className={styles.developersSection}>
+        <h2 className={styles.developersTitle}>Desenvolvedores do Site</h2>
+        <p className={styles.developersNames}>
           Thamires · Freddy · Carlos · Renato · Fernando
         </p>
       </div>

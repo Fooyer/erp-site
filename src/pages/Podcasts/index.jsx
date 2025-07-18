@@ -1,8 +1,7 @@
 import { useState } from "react";
-import styles from "./styles.module.css";
+import styles from "./podcast.module.css";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
-import "./customAudioPlayer.css";
 import { Mic } from "lucide-react";
 
 import episodio1 from "./Files/1.mp3";
@@ -62,37 +61,43 @@ const Podcasts = () => {
 
   return (
     <div className={styles.pageContainer}>
-      <h2 className="page-title">Podcasts</h2>
+      <h2 className={styles.pageTitle}>Podcasts</h2>
 
-      <div className="page-content" style={{ marginBottom: "50px" }}>
-        <div className="page-header">
-          <Mic className="page-header-icon icon-purple" />
-          <h3 className="page-header-title">Conteúdos em Áudio sobre IA</h3>
+      <div className={styles.pageContent} style={{ marginBottom: "50px" }}>
+        <div className={styles.pageHeader}>
+          <Mic className={`${styles.pageHeaderIcon} ${styles.iconPurple}`} />
+          <h3 className={styles.pageHeaderTitle}>
+            Conteúdos em Áudio sobre IA
+          </h3>
         </div>
 
-        <div className="responsible-section podcasts-responsible">
-          <p className="responsible-title">Responsáveis:</p>
-          <p className="responsible-names">Jussara, Matheus, Gianne, Arthur</p>
+        <div className={styles.responsibleSection}>
+          <p className={styles.responsibleTitle}>Responsáveis:</p>
+          <p className={styles.responsibleNames}>
+            Jussara, Matheus, Gianne, Arthur
+          </p>
         </div>
-        <p className="description">
+
+        <p className={styles.description}>
           Nossa série de podcasts explora como a Inteligência Artificial está
           revolucionando os sistemas integrados de gestão empresarial.
         </p>
 
-        <ul className="episode-list">
+        <ul className={styles.episodeList}>
           {episodes.map((ep, index) => (
             <li
               key={index}
-              className={`episode-item ${
-                index === currentEpisodeIndex ? "active" : ""
+              className={`${styles.episodeItem} ${
+                index === currentEpisodeIndex ? styles.active : ""
               }`}
               onClick={() => setCurrentEpisodeIndex(index)}
             >
               <strong>{ep.title}</strong>
-              <span className="duration">{ep.duration}</span>
+              <span className={styles.duration}>{ep.duration}</span>
             </li>
           ))}
         </ul>
+
         <AudioPlayer
           className="custom-player"
           src={episodes[currentEpisodeIndex].src}

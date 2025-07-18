@@ -1,34 +1,34 @@
-import React from "react";
 import { FileText } from "lucide-react";
+import styles from "./ementa.module.css";
 
 const Ementa = () => {
   return (
-    <div className="page-container">
-      <h2 className="page-title">Ementa da Disciplina</h2>
+    <div className={styles.pageContainer}>
+      <h2 className={styles.pageTitle}>Ementa da Disciplina</h2>
 
-      <div className="page-content">
-        <div className="page-header">
-          <FileText className="page-header-icon icon-blue" />
-          <h3 className="page-header-title">Documentação</h3>
+      <div className={styles.pageContent}>
+        <div className={styles.pageHeader}>
+          <FileText className={`${styles.pageHeaderIcon} ${styles.iconBlue}`} />
+          <h3 className={styles.pageHeaderTitle}>Documentação</h3>
         </div>
 
-        <div className="responsible-section ementa-responsible">
-          <p className="responsible-title">Responsáveis:</p>
-          <p className="responsible-names">João, Daniel, Danielle, Willian</p>
+        <div className={styles.responsibleSection}>
+          <p className={styles.responsibleTitle}>Responsáveis:</p>
+          <p className={styles.responsibleNames}>
+            João, Daniel, Danielle, Willian
+          </p>
         </div>
 
-        <div className="description">
+        <div className={styles.description}>
           <p>
             Aqui você encontrará toda a ementa da disciplina de Sistemas
             Integrados de Gestão.
           </p>
         </div>
 
-        <div className="button-container">
-          <a href="/Ementa SIG 2025.pdf" download className="topic-link">
-            {" "}
-            <button className="button">
-              {" "}
+        <div className={styles.buttonContainer}>
+          <a href="/Ementa SIG 2025.pdf" download className={styles.topicLink}>
+            <button className={styles.button}>
               <FileText style={{ width: "1.25rem", height: "1.25rem" }} />
               Baixar PDF da Ementa
             </button>

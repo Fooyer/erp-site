@@ -9,6 +9,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
+import styles from "./layout.module.css";
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -40,18 +41,18 @@ const Layout = ({ children }) => {
   };
 
   return (
-    <div className="mainContainer">
+    <div className={styles.mainContainer}>
       {/* Navigation */}
-      <nav className="nav">
-        <div className="nav-container">
+      <nav className={styles.nav}>
+        <div className={styles.navContainer}>
           {isMobile ? (
             // Mobile Navigation
-            <div className="mobile-nav">
-              <div className="mobile-nav-header">
-                <h1 className="mobile-nav-title">Base de Conhecimento</h1>
+            <div className={styles.mobileNav}>
+              <div className={styles.mobileNavHeader}>
+                <h1 className={styles.mobileNavTitle}>Base de Conhecimento</h1>
                 <button
                   onClick={toggleMenu}
-                  className="mobile-menu-toggle"
+                  className={styles.mobileMenuToggle}
                   aria-label="Toggle menu"
                 >
                   {isMenuOpen ? (
@@ -63,9 +64,9 @@ const Layout = ({ children }) => {
               </div>
 
               {isMenuOpen && (
-                <div className="mobile-menu-overlay" onClick={toggleMenu}>
+                <div className={styles.mobileMenuOverlay} onClick={toggleMenu}>
                   <div
-                    className="mobile-menu-content"
+                    className={styles.mobileMenuContent}
                     onClick={(e) => e.stopPropagation()}
                   >
                     {menuItems.map((item) => {
@@ -75,8 +76,8 @@ const Layout = ({ children }) => {
                         <Link
                           key={item.name}
                           to={item.path}
-                          className={`mobile-menu-item ${
-                            isActive ? "mobile-menu-item-active" : ""
+                          className={`${styles.mobileMenuItem} ${
+                            isActive ? styles.mobileMenuItemActive : ""
                           }`}
                           onClick={toggleMenu}
                         >
@@ -93,7 +94,7 @@ const Layout = ({ children }) => {
             </div>
           ) : (
             // Desktop Navigation
-            <div className="menu-container">
+            <div className={styles.menuContainer}>
               {menuItems.map((item) => {
                 const IconComponent = item.icon;
                 const isActive = location.pathname === item.path;
@@ -101,8 +102,10 @@ const Layout = ({ children }) => {
                   <Link
                     key={item.name}
                     to={item.path}
-                    className={`menu-button ${
-                      isActive ? "menu-button-active" : "menu-button-inactive"
+                    className={`${styles.menuButton} ${
+                      isActive
+                        ? styles.menuButtonActive
+                        : styles.menuButtonInactive
                     }`}
                   >
                     <IconComponent
@@ -111,14 +114,7 @@ const Layout = ({ children }) => {
                     <span>{item.name}</span>
                     {isActive && (
                       <div
-                        className="pulse-bg"
-                        style={{
-                          position: "absolute",
-                          inset: 0,
-                          backgroundColor: "rgb(37, 99, 235)",
-                          borderRadius: "9999px",
-                          zIndex: -1,
-                        }}
+                        className={`${styles.pulseBg} ${styles.pulseBackground}`}
                       />
                     )}
                   </Link>
@@ -130,119 +126,21 @@ const Layout = ({ children }) => {
       </nav>
 
       {/* Main Content */}
-      <main className="main">
-        <div className="content-container">{children}</div>
+      <main className={styles.main}>
+        <div className={styles.contentContainer}>{children}</div>
       </main>
 
       {/* Footer */}
-      <footer className="footer">
-        <div className="footer-container">
-          <p style={{ color: "rgb(209, 213, 219)" }}>
+      <footer className={styles.footer}>
+        <div className={styles.footerContainer}>
+          <p className={styles.footerText}>
             © 2025 Base de Conhecimento - Sistemas Integrados de Gestão
           </p>
-          <p
-            style={{
-              color: "rgb(156, 163, 175)",
-              fontSize: "0.875rem",
-              marginTop: "0.5rem",
-            }}
-          >
+          <p className={styles.footerSubText}>
             Desenvolvido pelos alunos da disciplina
           </p>
         </div>
       </footer>
-
-      {/* Mobile Navigation Styles */}
-      <style jsx>{`
-        .mobile-nav {
-          width: 100%;
-          padding: 1rem;
-        }
-
-        .mobile-nav-header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
-
-        .mobile-nav-title {
-          font-size: 1.125rem;
-          font-weight: 600;
-          color: rgb(31, 41, 55);
-          margin: 0;
-        }
-
-        .mobile-menu-toggle {
-          background: none;
-          border: none;
-          cursor: pointer;
-          padding: 0.5rem;
-          border-radius: 0.375rem;
-          transition: background-color 0.2s ease;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .mobile-menu-toggle:hover {
-          background-color: rgb(243, 244, 246);
-        }
-
-        .mobile-menu-overlay {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background-color: rgba(0, 0, 0, 0.5);
-          z-index: 1000;
-          display: flex;
-          justify-content: flex-end;
-        }
-
-        .mobile-menu-content {
-          background-color: white;
-          width: 280px;
-          height: 100vh;
-          box-shadow: -4px 0 6px -1px rgba(0, 0, 0, 0.1);
-          padding: 2rem 1rem;
-          overflow-y: auto;
-        }
-
-        .mobile-menu-item {
-          display: flex;
-          align-items: center;
-          gap: 0.75rem;
-          padding: 1rem;
-          margin-bottom: 0.5rem;
-          border-radius: 0.5rem;
-          text-decoration: none;
-          color: rgb(75, 85, 99);
-          transition: all 0.2s ease;
-          font-weight: 500;
-        }
-
-        .mobile-menu-item:hover {
-          background-color: rgb(239, 246, 255);
-          color: rgb(37, 99, 235);
-        }
-
-        .mobile-menu-item-active {
-          background-color: rgb(37, 99, 235);
-          color: white;
-        }
-
-        .mobile-menu-item-active:hover {
-          background-color: rgb(29, 78, 216);
-          color: white;
-        }
-
-        @media (min-width: 769px) {
-          .mobile-nav {
-            display: none;
-          }
-        }
-      `}</style>
     </div>
   );
 };

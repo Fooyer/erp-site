@@ -1,28 +1,31 @@
 import { Trophy } from "lucide-react";
+import styles from "./cases.module.css";
 
 const Cases = () => {
   return (
-    <div className="page-container-wide">
-      <h2 className="page-title">Cases de Sucesso</h2>
+    <div className={styles.pageContainer}>
+      <h2 className={styles.pageTitle}>Cases de Sucesso</h2>
 
-      <div className="page-content">
-        <div className="page-header">
-          <Trophy className="page-header-icon icon-orange" />
-          <h3 className="page-header-title">Histórias de Sucesso</h3>
+      <div className={styles.pageContent}>
+        <div className={styles.pageHeader}>
+          <Trophy className={`${styles.pageHeaderIcon} ${styles.iconOrange}`} />
+          <h3 className={styles.pageHeaderTitle}>Histórias de Sucesso</h3>
         </div>
 
-        <div className="responsible-section cases-responsible">
-          <p className="responsible-title">Responsáveis:</p>
-          <p className="responsible-names">Willian, Mariane, Isabelle</p>
+        <div
+          className={`${styles.responsibleSection} ${styles.casesResponsible}`}
+        >
+          <p className={styles.responsibleTitle}>Responsáveis:</p>
+          <p className={styles.responsibleNames}>Willian, Mariane, Isabelle</p>
         </div>
 
-        <div className="cases-grid">
-          <div className="case-card">
-            <div className="case-icon-container">
-              <Trophy className="case-icon" />
+        <div className={styles.casesGrid}>
+          <div className={styles.caseCard}>
+            <div className={styles.caseIconContainer}>
+              <Trophy className={styles.caseIcon} />
             </div>
-            <h4 className="case-title">Discover Financial Services</h4>
-            <p className="case-description">
+            <h4 className={styles.caseTitle}>Discover Financial Services</h4>
+            <p className={styles.caseDescription}>
               A Discover, terceira maior empresa de cartões de crédito dos EUA,
               substituiu sete sistemas ERP on-premises por uma solução na nuvem
               (Oracle Fusion Cloud ERP + EPM). O objetivo era padronizar
@@ -35,12 +38,12 @@ const Cases = () => {
             </p>
           </div>
 
-          <div className="case-card">
-            <div className="case-icon-container">
-              <Trophy className="case-icon" />
+          <div className={styles.caseCard}>
+            <div className={styles.caseIconContainer}>
+              <Trophy className={styles.caseIcon} />
             </div>
-            <h4 className="case-title">Hormel Foods</h4>
-            <p className="case-description">
+            <h4 className={styles.caseTitle}>Hormel Foods</h4>
+            <p className={styles.caseDescription}>
               A Hormel, detentora de mais de 50 marcas, enfrentava dificuldades
               com sistemas fragmentados e obsoletos. Em parceria com Oracle e
               KPMG, unificou suas operações com o Oracle Cloud ERP. A chave do
@@ -52,12 +55,12 @@ const Cases = () => {
             </p>
           </div>
 
-          <div className="case-card">
-            <div className="case-icon-container">
-              <Trophy className="case-icon" />
+          <div className={styles.caseCard}>
+            <div className={styles.caseIconContainer}>
+              <Trophy className={styles.caseIcon} />
             </div>
-            <h4 className="case-title">Taylor Corporation</h4>
-            <p className="case-description">
+            <h4 className={styles.caseTitle}>Taylor Corporation</h4>
+            <p className={styles.caseDescription}>
               A Taylor Corporation decidiu adotar um novo sistemas com foco em
               consolidar 85 sistemas legados em uma única plataforma ERP na
               nuvem. O CEO liderou pessoalmente a mobilização dos 10.000
@@ -68,12 +71,13 @@ const Cases = () => {
               financeira e de compras
             </p>
           </div>
-          <div className="case-card">
-            <div className="case-icon-container">
-              <Trophy className="case-icon" />
+
+          <div className={styles.caseCard}>
+            <div className={styles.caseIconContainer}>
+              <Trophy className={styles.caseIcon} />
             </div>
-            <h4 className="case-title">NuBank</h4>
-            <p className="case-description">
+            <h4 className={styles.caseTitle}>NuBank</h4>
+            <p className={styles.caseDescription}>
               O Nubank é um exemplo inspirador de empreendedorismo inovador no
               Brasil. Fundado em 2013 por David Vélez, Cristina Junqueira e
               Edward Wible, a fintech nasceu para enfrentar os bancos
