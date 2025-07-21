@@ -1,7 +1,11 @@
-import { FileText } from "lucide-react";
+import { FileText, Eye, Download } from "lucide-react";
 import styles from "./ementa.module.css";
 
 const Ementa = () => {
+  const handleViewPdf = () => {
+    window.open("/Ementa SIG 2025.pdf", "_blank");
+  };
+
   return (
     <div className={styles.pageContainer}>
       <h2 className={styles.pageTitle}>Ementa da Disciplina</h2>
@@ -27,9 +31,17 @@ const Ementa = () => {
         </div>
 
         <div className={styles.buttonContainer}>
+          <button
+            onClick={handleViewPdf}
+            className={`${styles.button} ${styles.buttonView}`}
+          >
+            <Eye style={{ width: "1.25rem", height: "1.25rem" }} />
+            Visualizar PDF
+          </button>
+
           <a href="/Ementa SIG 2025.pdf" download className={styles.topicLink}>
-            <button className={styles.button}>
-              <FileText style={{ width: "1.25rem", height: "1.25rem" }} />
+            <button className={`${styles.button} ${styles.buttonDownload}`}>
+              <Download style={{ width: "1.25rem", height: "1.25rem" }} />
               Baixar PDF da Ementa
             </button>
           </a>

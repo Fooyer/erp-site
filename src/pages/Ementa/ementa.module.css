@@ -1,4 +1,3 @@
-/* Page Styles */
 .pageContainer {
   max-width: 64rem;
   margin: 0 auto;
@@ -64,6 +63,8 @@
 .buttonContainer {
   display: flex;
   justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .topicLink {
@@ -73,14 +74,7 @@
   color: inherit;
 }
 
-.topicLink:hover {
-  background-color: rgba(16, 185, 129, 0.25);
-  border-radius: 4px;
-}
-
 .button {
-  background-color: rgb(37, 99, 235);
-  color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
   font-weight: 500;
@@ -91,9 +85,22 @@
   border: none;
   cursor: pointer;
   text-decoration: none;
+  color: white;
 }
 
-.button:hover {
+.buttonView {
+  background-color: rgb(16, 185, 129);
+}
+
+.buttonView:hover {
+  background-color: rgb(5, 150, 105);
+}
+
+.buttonDownload {
+  background-color: rgb(37, 99, 235);
+}
+
+.buttonDownload:hover {
   background-color: rgb(29, 78, 216);
 }
 
@@ -129,9 +136,22 @@
     padding-left: 0.5rem;
   }
 
+  .buttonContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .button {
     padding: 0.625rem 1.25rem;
     font-size: 0.875rem;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .topicLink {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
   }
 }
 
