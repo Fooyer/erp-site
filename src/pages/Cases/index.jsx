@@ -1,106 +1,128 @@
-import { Trophy } from "lucide-react";
+import React, { memo } from "react";
+import { Trophy, TrendingUp, Target, Star } from "lucide-react";
 import styles from "./cases.module.css";
+
+const casesData = [
+  {
+    id: 1,
+    icon: Trophy,
+    title: "Discover Financial Services",
+    category: "Transformação Digital",
+    description:
+      "A Discover, terceira maior empresa de cartões de crédito dos EUA, substituiu sete sistemas ERP on-premises por uma solução na nuvem (Oracle Fusion Cloud ERP + EPM). Resultado: maior eficiência operacional, dados mais confiáveis e decisões mais ágeis.",
+    metrics: [
+      "7 sistemas unificados",
+      "Pandemia sem impactos",
+      "Dados em tempo real",
+    ],
+    color: "blue",
+  },
+  {
+    id: 2,
+    icon: TrendingUp,
+    title: "Hormel Foods",
+    category: "Unificação Empresarial",
+    description:
+      "A Hormel, detentora de mais de 50 marcas, enfrentava dificuldades com sistemas fragmentados. Em parceria com Oracle e KPMG, unificou suas operações com Oracle Cloud ERP, garantindo visibilidade unificada dos negócios.",
+    metrics: [
+      "50+ marcas integradas",
+      "Processos padronizados",
+      "Análise estratégica",
+    ],
+    color: "green",
+  },
+  {
+    id: 3,
+    icon: Target,
+    title: "Taylor Corporation",
+    category: "Modernização Corporativa",
+    description:
+      "A Taylor Corporation consolidou 85 sistemas legados em uma única plataforma ERP na nuvem. O CEO liderou pessoalmente a mobilização de 10.000 colaboradores, resultando em maior agilidade e redução de custos.",
+    metrics: [
+      "85 sistemas consolidados",
+      "10.000 colaboradores",
+      "Custos reduzidos",
+    ],
+    color: "purple",
+  },
+  {
+    id: 4,
+    icon: Star,
+    title: "Nubank",
+    category: "Fintech Inovadora",
+    description:
+      "O Nubank revolucionou o mercado financeiro brasileiro com sua proposta digital e centrada no cliente. Começou com cartão sem anuidade e hoje atende mais de 90 milhões de pessoas, tornando-se uma das maiores fintechs do mundo.",
+    metrics: ["90M+ clientes", "Valor bilionário", "Presença internacional"],
+    color: "violet",
+  },
+];
+
+const CaseCard = memo(({ caseItem, index }) => {
+  const Icon = caseItem.icon;
+
+  return (
+    <article
+      className={`${styles.caseCard} ${styles[`color${caseItem.color}`]}`}
+      style={{ animationDelay: `${index * 0.1}s` }}
+    >
+      <div className={styles.cardHeader}>
+        <div className={styles.iconWrapper}>
+          <Icon className={styles.cardIcon} size={24} />
+        </div>
+        <div className={styles.cardMeta}>
+          <span className={styles.category}>{caseItem.category}</span>
+          <h3 className={styles.cardTitle}>{caseItem.title}</h3>
+        </div>
+      </div>
+
+      <p className={styles.cardDescription}>{caseItem.description}</p>
+
+      <div className={styles.metricsContainer}>
+        {caseItem.metrics.map((metric, idx) => (
+          <span key={idx} className={styles.metric}>
+            {metric}
+          </span>
+        ))}
+      </div>
+    </article>
+  );
+});
+
+CaseCard.displayName = "CaseCard";
 
 const Cases = () => {
   return (
-    <div className={styles.pageContainer}>
-      <h2 className={styles.pageTitle}>Cases de Sucesso</h2>
-
-      <div className={styles.pageContent}>
-        <div className={styles.pageHeader}>
-          <Trophy className={`${styles.pageHeaderIcon} ${styles.iconOrange}`} />
-          <h3 className={styles.pageHeaderTitle}>Histórias de Sucesso</h3>
-        </div>
-
-        <div
-          className={`${styles.responsibleSection} ${styles.casesResponsible}`}
-        >
-          <p className={styles.responsibleTitle}>Responsáveis:</p>
-          <p className={styles.responsibleNames}>Willian, Mariane, Isabelle</p>
-        </div>
-
-        <div className={styles.casesGrid}>
-          <div className={styles.caseCard}>
-            <div className={styles.caseIconContainer}>
-              <Trophy className={styles.caseIcon} />
-            </div>
-            <h4 className={styles.caseTitle}>Discover Financial Services</h4>
-            <p className={styles.caseDescription}>
-              A Discover, terceira maior empresa de cartões de crédito dos EUA,
-              substituiu sete sistemas ERP on-premises por uma solução na nuvem
-              (Oracle Fusion Cloud ERP + EPM). O objetivo era padronizar
-              processos, melhorar a precisão dos dados e apoiar o crescimento
-              das áreas financeiras. A implementação foi bem-sucedida, mesmo
-              durante a pandemia, graças a uma visão clara de transformação
-              organizacional, não apenas tecnológica. O resultado foi maior
-              eficiência operacional, dados mais confiáveis, decisões mais ágeis
-              e atualizações contínuas via nuvem.
-            </p>
-          </div>
-
-          <div className={styles.caseCard}>
-            <div className={styles.caseIconContainer}>
-              <Trophy className={styles.caseIcon} />
-            </div>
-            <h4 className={styles.caseTitle}>Hormel Foods</h4>
-            <p className={styles.caseDescription}>
-              A Hormel, detentora de mais de 50 marcas, enfrentava dificuldades
-              com sistemas fragmentados e obsoletos. Em parceria com Oracle e
-              KPMG, unificou suas operações com o Oracle Cloud ERP. A chave do
-              sucesso foi o trabalho colaborativo entre as equipes, que garantiu
-              padronização de processos, visibilidade unificada dos negócios e
-              análise mais estratégica dos dados. A nova plataforma também
-              permitiu identificar ineficiências na cadeia de suprimentos e
-              melhorar o controle financeiro de todas as marcas.
-            </p>
-          </div>
-
-          <div className={styles.caseCard}>
-            <div className={styles.caseIconContainer}>
-              <Trophy className={styles.caseIcon} />
-            </div>
-            <h4 className={styles.caseTitle}>Taylor Corporation</h4>
-            <p className={styles.caseDescription}>
-              A Taylor Corporation decidiu adotar um novo sistemas com foco em
-              consolidar 85 sistemas legados em uma única plataforma ERP na
-              nuvem. O CEO liderou pessoalmente a mobilização dos 10.000
-              colaboradores, promovendo uma cultura de participação e adaptação.
-              A adesão dos funcionários foi crucial para o sucesso da mudança.
-              Como resultado, a empresa ganhou agilidade na tomada de decisões,
-              reduziu custos e aumentou a eficiência, especialmente na gestão
-              financeira e de compras
-            </p>
-          </div>
-
-          <div className={styles.caseCard}>
-            <div className={styles.caseIconContainer}>
-              <Trophy className={styles.caseIcon} />
-            </div>
-            <h4 className={styles.caseTitle}>NuBank</h4>
-            <p className={styles.caseDescription}>
-              O Nubank é um exemplo inspirador de empreendedorismo inovador no
-              Brasil. Fundado em 2013 por David Vélez, Cristina Junqueira e
-              Edward Wible, a fintech nasceu para enfrentar os bancos
-              tradicionais, conhecidos por suas altas tarifas, burocracia e
-              atendimento ineficiente. A proposta era clara: oferecer um serviço
-              financeiro simples, digital e centrado no cliente. Começando com
-              um cartão de crédito sem anuidade e controlado por um aplicativo,
-              o Nubank atraiu milhões de brasileiros que buscavam liberdade e
-              transparência. Com o tempo, expandiu seus serviços para conta
-              digital, empréstimos, seguros e investimentos, tudo de forma
-              prática e sem agências físicas. Seu crescimento foi impulsionado
-              por um atendimento próximo, tecnologia de ponta e forte presença
-              nas redes sociais. Hoje, o Nubank atende mais de 90 milhões de
-              pessoas e se tornou uma das maiores fintechs do mundo, com
-              presença em vários países e valor de mercado bilionário. Sua
-              história mostra que resolver um problema real com simplicidade,
-              inovação e foco nas pessoas é o caminho para o sucesso no
-              empreendedorismo moderno.
-            </p>
-          </div>
-        </div>
+    <main className={styles.container}>
+      <div className={styles.hero}>
+        <Trophy className={styles.heroIcon} size={48} />
+        <h1 className={styles.title}>Cases de Sucesso</h1>
+        <p className={styles.subtitle}>
+          Histórias reais de transformação e inovação empresarial
+        </p>
       </div>
-    </div>
+
+      <section className={styles.content}>
+        <div className={styles.responsibleCard}>
+          <div className={styles.responsibleHeader}>
+            <div className={styles.responsibleIcon}>
+              <Target size={20} />
+            </div>
+            <div>
+              <h2 className={styles.responsibleTitle}>Equipe Responsável</h2>
+              <p className={styles.responsibleNames}>
+                Willian • Mariane • Isabelle
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.grid}>
+          {casesData.map((caseItem, index) => (
+            <CaseCard key={caseItem.id} caseItem={caseItem} index={index} />
+          ))}
+        </div>
+      </section>
+    </main>
   );
 };
 

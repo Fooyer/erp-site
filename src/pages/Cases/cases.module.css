@@ -1,118 +1,248 @@
-/* Page Styles */
-.pageContainer {
-  max-width: 80rem;
+/* Base Styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+  background: transparent;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 2rem 0;
+}
+
+.heroIcon {
+  color: var(--secondary);
+  margin-bottom: 1rem;
+  filter: drop-shadow(var(--shadow-sm));
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Content Section */
+.content {
+  max-width: 1100px;
   margin: 0 auto;
 }
 
-.pageTitle {
-  font-size: 2rem;
-  font-weight: bold;
-  color: rgb(31, 41, 55);
-  margin-bottom: 2rem;
-  text-align: center;
+/* Responsible Card */
+.responsibleCard {
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem 2rem;
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
 }
 
-.pageContent {
-  background-color: white;
-  border-radius: 1rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  padding: 2rem;
-}
-
-.pageHeader {
+.responsibleHeader {
   display: flex;
   align-items: center;
-  margin-bottom: 1.5rem;
+  gap: 1rem;
 }
 
-.pageHeaderIcon {
-  width: 2rem;
-  height: 2rem;
-  margin-right: 0.75rem;
-}
-
-.pageHeaderTitle {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: rgb(31, 41, 55);
-}
-
-/* Responsible Section */
-.responsibleSection {
-  padding-left: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.responsibleTitle {
-  color: rgb(55, 65, 81);
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-}
-
-.responsibleNames {
-  color: rgb(75, 85, 99);
-}
-
-.casesResponsible {
-  border-left: 4px solid rgb(249, 115, 22);
-}
-
-/* Cases Grid */
-.casesGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
-.caseCard {
-  background: linear-gradient(
-    135deg,
-    rgb(255, 251, 235) 0%,
-    rgb(254, 249, 195) 100%
-  );
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  border: 1px solid rgb(251, 191, 36);
-}
-
-.caseIconContainer {
-  width: 3rem;
-  height: 3rem;
-  background-color: rgb(255, 237, 213);
-  border-radius: 50%;
+.responsibleIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--secondary-light);
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--secondary);
+}
+
+.responsibleTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.responsibleNames {
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Case Cards */
+.caseCard {
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  animation: slideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.caseCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.caseCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.caseCard:hover::before {
+  transform: scaleX(1);
+}
+
+/* Color Variants */
+.colorblue::before {
+  background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+}
+
+.colorgreen::before {
+  background: linear-gradient(90deg, #10b981, #059669);
+}
+
+.colorpurple::before {
+  background: linear-gradient(90deg, #8b5cf6, #7c3aed);
+}
+
+.colorviolet::before {
+  background: linear-gradient(90deg, #a855f7, #9333ea);
+}
+
+/* Card Header */
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
   margin-bottom: 1rem;
 }
 
-.caseIcon {
-  width: 1.5rem;
-  height: 1.5rem;
-  color: rgb(249, 115, 22);
+.iconWrapper {
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
 }
 
-.caseTitle {
-  font-weight: bold;
-  color: rgb(31, 41, 55);
-  margin-bottom: 0.5rem;
+.caseCard:hover .iconWrapper {
+  transform: scale(1.1);
 }
 
-.caseDescription {
-  font-size: 0.875rem;
-  color: rgb(75, 85, 99);
+.colorblue .iconWrapper {
+  background: #dbeafe;
+  color: #3b82f6;
 }
 
-/* Icon Colors */
-.iconOrange {
-  color: rgb(249, 115, 22);
+.colorgreen .iconWrapper {
+  background: #d1fae5;
+  color: #10b981;
 }
 
-/* Animation */
-@keyframes fadeInSlide {
+.colorpurple .iconWrapper {
+  background: #e9d5ff;
+  color: #8b5cf6;
+}
+
+.colorviolet .iconWrapper {
+  background: #f3e8ff;
+  color: #a855f7;
+}
+
+.cardIcon {
+  flex-shrink: 0;
+}
+
+.cardMeta {
+  flex: 1;
+  min-width: 0;
+}
+
+.category {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin: 0;
+}
+
+.cardDescription {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+}
+
+/* Metrics */
+.metricsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.metric {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  background: var(--surface-alt);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+/* Animations */
+@keyframes slideIn {
   from {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -120,45 +250,127 @@
   }
 }
 
-.contentContainer {
-  animation: fadeInSlide 0.5s ease-out;
-}
-
-/* RESPONSIVE STYLES - MOBILE */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .pageContent {
-    padding: 1.5rem;
-    border-radius: 0.75rem;
+  .container {
+    padding: 1rem 0.75rem;
   }
 
-  .pageTitle {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+  .hero {
+    margin-bottom: 3rem;
+    padding: 1rem 0;
   }
 
-  .pageHeader {
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .responsibleCard {
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .responsibleHeader {
     flex-direction: column;
     align-items: flex-start;
-    text-align: left;
+    gap: 0.75rem;
   }
 
-  .pageHeaderIcon {
-    margin-right: 0;
-    margin-bottom: 0.5rem;
-  }
-
-  .casesGrid {
+  .grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
 
-  .responsibleSection {
-    padding-left: 0.5rem;
+  .caseCard {
+    padding: 1.25rem;
+  }
+
+  .cardHeader {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .iconWrapper {
+    align-self: flex-start;
+  }
+
+  .cardTitle {
+    font-size: 1.125rem;
   }
 }
 
 @media (max-width: 480px) {
-  .pageContent {
+  .container {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .responsibleCard {
     padding: 1rem;
+  }
+
+  .caseCard {
+    padding: 1rem;
+  }
+
+  .cardDescription {
+    font-size: 0.875rem;
+  }
+
+  .metricsContainer {
+    gap: 0.375rem;
+  }
+
+  .metric {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* Performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+  .caseCard {
+    animation: none;
+    transition: none;
+  }
+
+  .caseCard:hover {
+    transform: none;
+  }
+
+  .iconWrapper {
+    transition: none;
+  }
+
+  .caseCard::before {
+    transition: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .caseCard {
+    border: 2px solid var(--text-primary);
+  }
+
+  .metric {
+    border: 1px solid var(--text-secondary);
+  }
+}
+
+/* Print styles */
+@media print {
+  .container {
+    background: none;
+    box-shadow: none;
+  }
+
+  .caseCard {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #000;
   }
 }

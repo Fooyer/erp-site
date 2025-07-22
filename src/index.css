@@ -18,3 +18,24 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+/* Variables */
+:root {
+  --primary: #3b82f6;
+  --primary-light: #dbeafe;
+  --secondary: #f59e0b;
+  --secondary-light: #fef3c7;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --surface: #ffffff;
+  --surface-alt: #f8fafc;
+  --border: #e5e7eb;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+}
