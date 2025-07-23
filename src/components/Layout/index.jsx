@@ -8,6 +8,7 @@ import {
   Home,
   Menu,
   X,
+  Video,
 } from "lucide-react";
 import styles from "./layout.module.css";
 
@@ -34,6 +35,7 @@ const Layout = ({ children }) => {
     { name: "Apresentações", path: "/apresentacoes", icon: Presentation },
     { name: "Podcasts", path: "/podcasts", icon: Mic },
     { name: "Cases", path: "/cases", icon: Trophy },
+    { name: "Vídeos", path: "/videos", icon: Video },
   ];
 
   const toggleMenu = () => {

@@ -115,6 +115,10 @@
   color: rgb(249, 115, 22);
 }
 
+.iconRed {
+  color: rgb(239, 68, 68);
+}
+
 /* RESPONSIVE STYLES - MOBILE */
 @media (max-width: 768px) {
   /* Hero section mobile */

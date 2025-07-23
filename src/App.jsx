@@ -9,6 +9,7 @@ const Ementa = React.lazy(() => import("./pages/Ementa"));
 const Apresentacoes = React.lazy(() => import("./pages/Apresentacoes"));
 const Podcasts = React.lazy(() => import("./pages/Podcasts"));
 const Cases = React.lazy(() => import("./pages/Cases"));
+const Videos = React.lazy(() => import("./pages/Videos"));
 
 // Componente de loading usando react-spinners
 const LoadingSpinner = () => (
@@ -34,6 +35,7 @@ function App() {
             <Route path="/apresentacoes" element={<Apresentacoes />} />
             <Route path="/podcasts" element={<Podcasts />} />
             <Route path="/cases" element={<Cases />} />
+            <Route path="/videos" element={<Videos />} />
           </Routes>
         </Suspense>
       </Layout>
