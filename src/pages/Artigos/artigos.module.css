@@ -1,0 +1,520 @@
+/* artigos.module.css - Versão Otimizada */
+
+/* Base Styles */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+  background: transparent;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 3rem 0;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #1f2937, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #6b7280;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+/* Content Section */
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+.searchContainer {
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.875rem 1rem 0.875rem 2.75rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  background: #f9fafb;
+  color: #1f2937;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Section Titles */
+.sectionTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sectionTitle::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6, transparent);
+  border-radius: 1px;
+}
+
+/* Articles Section */
+.articlesSection {
+  margin-bottom: 2rem;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.75rem;
+}
+
+/* Article Cards - Otimizado */
+.articleCard {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  animation: slideUp 0.4s ease-out both;
+}
+
+.articleCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #10b981);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.articleCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.articleCard:hover::before {
+  transform: scaleX(1);
+}
+
+/* Card Header */
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.cardMeta {
+  flex: 1;
+}
+
+.cardInfo {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.readTime,
+.date {
+  font-weight: 500;
+}
+
+.cardTitle {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #1f2937;
+  line-height: 1.3;
+  margin: 0 0 1rem 0;
+  transition: color 0.2s ease;
+}
+
+.articleCard:hover .cardTitle {
+  color: #3b82f6;
+}
+
+.cardDescription {
+  color: #6b7280;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+/* Card Actions */
+.cardActions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.actionButton {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+}
+
+.primary {
+  background: #3b82f6;
+  color: white;
+}
+
+.primary:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.secondary {
+  background: #f3f4f6;
+  color: #1f2937;
+  border: 2px solid #e5e7eb;
+}
+
+.secondary:hover {
+  background: #f9fafb;
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+
+.tertiary {
+  background: #10b981;
+  color: white;
+}
+
+.tertiary:hover {
+  background: #059669;
+  transform: translateY(-1px);
+}
+
+/* PDF Modal - Versão Otimizada */
+.pdfModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: fadeIn 0.2s ease;
+}
+
+.pdfModalContent {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  height: 90vh;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+.pdfHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f8fafc;
+  flex-shrink: 0;
+}
+
+.pdfInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.pdfTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pdfControls {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.newTabButton,
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: none;
+  background: #ffffff;
+  color: #6b7280;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.newTabButton:hover,
+.closeButton:hover {
+  background: #f1f5f9;
+  color: #1f2937;
+}
+
+.pdfContainer {
+  flex: 1;
+  position: relative;
+  background: #f9fafb;
+  min-height: 0;
+}
+
+.pdfFrame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: white;
+}
+
+/* Empty State */
+.emptyState {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #6b7280;
+}
+
+.emptyIcon {
+  margin-bottom: 1rem;
+  opacity: 0.6;
+}
+
+.emptyState h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+/* Animations - Simplificadas */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem 0.75rem;
+  }
+
+  .hero {
+    padding: 2rem 0;
+    margin-bottom: 3rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+  }
+
+  .controls {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .searchContainer {
+    max-width: none;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .articleCard {
+    padding: 1.5rem;
+  }
+
+  .cardActions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .actionButton {
+    flex: none;
+    width: 100%;
+  }
+
+  .pdfModal {
+    padding: 0.5rem;
+  }
+
+  .pdfModalContent {
+    height: 95vh;
+    border-radius: 8px;
+  }
+
+  .pdfHeader {
+    padding: 1rem;
+  }
+
+  .pdfTitle {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .articleCard {
+    padding: 1.25rem;
+  }
+
+  .cardTitle {
+    font-size: 1.25rem;
+  }
+
+  .cardDescription {
+    font-size: 0.9rem;
+  }
+
+  .actionButton {
+    padding: 0.75rem 1rem;
+    font-size: 0.8125rem;
+  }
+}
+
+/* Performance Optimizations */
+@media (prefers-reduced-motion: reduce) {
+  .articleCard,
+  .actionButton,
+  .closeButton,
+  .newTabButton {
+    animation: none;
+    transition: none;
+  }
+
+  .articleCard:hover {
+    transform: none;
+  }
+}
+
+/* Reduz complexidade visual em dispositivos com baixa performance */
+@media (max-width: 480px) and (max-resolution: 1.5dppx) {
+  .articleCard::before {
+    display: none;
+  }
+
+  .articleCard {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .pdfModal {
+    backdrop-filter: none;
+  }
+}

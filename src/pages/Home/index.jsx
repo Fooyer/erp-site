@@ -1,4 +1,11 @@
-import { FileText, Presentation, Mic, Trophy, Play } from "lucide-react";
+import {
+  FileText,
+  Presentation,
+  Mic,
+  Trophy,
+  Play,
+  Newspaper,
+} from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import styles from "./home.module.css";
 
@@ -45,6 +52,13 @@ const Home = () => {
         <div className={styles.card} onClick={() => navigate("/videos")}>
           <Play className={`${styles.cardIcon} ${styles.iconRed}`} />
           <h3 className={styles.cardTitle}>Vídeos</h3>
+          <p className={styles.cardDescription}>
+            Aulas e explicações em vídeo sobre os temas da disciplina
+          </p>
+        </div>
+        <div className={styles.card} onClick={() => navigate("/artigos")}>
+          <Newspaper className={`${styles.cardIcon} ${styles.iconBlue}`} />
+          <h3 className={styles.cardTitle}>Artigos</h3>
           <p className={styles.cardDescription}>
             Aulas e explicações em vídeo sobre os temas da disciplina
           </p>
