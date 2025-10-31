@@ -10,6 +10,7 @@ import {
   X,
   Video,
   Newspaper,
+  ArrowLeft,
 } from "lucide-react";
 import styles from "./layout.module.css";
 
@@ -49,6 +50,17 @@ const Layout = ({ children }) => {
       {/* Navigation */}
       <nav className={styles.nav}>
         <div className={styles.navContainer}>
+          {/* Back Button - Always visible */}
+          <div className={styles.backButtonContainer}>
+            <Link
+              to="https://udesc-ceplan.com.br/"
+              className={styles.backButton}
+            >
+              <ArrowLeft style={{ width: "1.25rem", height: "1.25rem" }} />
+              <span>Projetos</span>
+            </Link>
+          </div>
+
           {isMobile ? (
             // Mobile Navigation
             <div className={styles.mobileNav}>
